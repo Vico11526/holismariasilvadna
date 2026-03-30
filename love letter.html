@@ -1,13 +1,12 @@
-}<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="love letter.css" />
+    <link rel="stylesheet" href="love_letter.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Love letter</title>
     <style>
-      /* Reproductor flotante */
       #music-player {
         position: fixed;
         bottom: 18px;
@@ -57,23 +56,22 @@
   </head>
   <body>
 
-    <!-- 🎵 Cambia "cancion.mp3" por el nombre de tu archivo -->
     <audio id="bg-music" loop preload="auto">
-      <source src="Calle 13 - No Hay Nadie Como Tú (Video) ft. Café Tacuba.mp3" type="audio/mpeg">
+      <source src="cancion.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Reproductor flotante -->
     <div id="music-player">
       <button id="toggle-btn" onclick="toggleMusic()">⏸️</button>
       <span>♪ música</span>
     </div>
 
-    <div class="container">  
+    <!-- ✅ .shadow ahora está DENTRO de .container, junto a .valentines -->
+    <div class="container">
       <div class="valentines">
         <div class="envelope"></div>
         <div class="front"></div>
         <div class="card">
-          <div class="text">To my</br>grirl </br>I love You!</div>
+          <div class="text">To my</br>girl </br>I love You!</div>
           <div class="heart"></div>
         </div>
         <div class="hearts">
@@ -83,18 +81,17 @@
           <div class="four"></div>
           <div class="five"></div>
         </div>
+        <div class="shadow"></div>
       </div>
     </div>
-    <div class="shadow"></div>
 
-    <script src="love letter.js"></script>
+    <script src="love_letter.js"></script>
     <script>
       const music = document.getElementById("bg-music");
       const player = document.getElementById("music-player");
       const toggleBtn = document.getElementById("toggle-btn");
       let musicStarted = false;
 
-      // Arranca la música en el primer toque/clic del usuario (requerido en móvil)
       function startMusic() {
         if (!musicStarted) {
           music.volume = 0.6;
@@ -115,7 +112,6 @@
         }
       }
 
-      // Escucha el primer toque en cualquier parte de la página
       document.addEventListener("click", startMusic, { once: true });
       document.addEventListener("touchstart", startMusic, { once: true });
     </script>
